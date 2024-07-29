@@ -80,8 +80,8 @@ export default function App() {
           };
           //get the current position of the mouse and subtract deviation from coordinate (0,0) position
           window.addEventListener("mousemove", (e) => {
-            (this.mouse.x = e.x - leftDeviation),
-              (this.mouse.y = e.y - topDeviation);
+            this.mouse.x = e.x - leftDeviation;
+            this.mouse.y = e.y - topDeviation;
           });
         }
         wrapText(text) {
@@ -183,8 +183,8 @@ export default function App() {
   }, [canvasRef]);
 
   return (
-    <div className="w-full h-screen">
-      <canvas className="w-full h-screen z-10" ref={canvasRef} id="canvas_id" />
+    <div className="main">
+      <canvas className="canvas" ref={canvasRef} id="canvas_id" />
     </div>
   );
 }
